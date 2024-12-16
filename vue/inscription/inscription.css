@@ -1,0 +1,119 @@
+.inscription {
+    background-image: url(../picture/logo_parisEvents.png);
+    background-size: 2000px;
+    background-position-x: -800px;
+    background-position-y: -400px;
+    
+    
+    text-align: center;
+    padding: 0px;
+    border-radius: 15px;
+    margin: 20px 10px;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.inscription .content {
+    border-radius: 15px ;
+    padding: 60px 40px;
+    backdrop-filter: blur(3px);
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+.inscription .content h2 {
+    
+    
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    
+}
+
+.inscription .form-inscription {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.inscription .form-inscription h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.inscription .form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.inscription .form-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.inscription .form-fields label {
+    font-size: 18px;
+}
+
+.inscription .form-fields input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.inscription .form-fields button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #34D399;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+
+.inscription .captcha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inscription .captcha-box {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    margin-top: 10px;
+}

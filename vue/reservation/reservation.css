@@ -1,0 +1,147 @@
+.reservation {
+    background-image: url(../../picture/logo_parisEvents.png);
+    background-size: 2000px;
+    background-position-x: -800px;
+    background-position-y: -400px;
+    
+    
+    text-align: center;
+    padding: 0px;
+    border-radius: 15px;
+    margin: 20px 10px;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reservation .content{
+
+    border-radius: 15px ;
+    padding: 60px 40px;
+    backdrop-filter: blur(3px);
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    color: black;
+    
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.reservation main h2 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.reservation .reservation-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding : 20px;
+    gap: 20px;
+
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; 
+}
+
+.reservation .reservation-block {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    width:100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.reservation .reservation-block p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.reservation .image-container {
+    background-color: #666;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.reservation .reservation-block a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #34D399;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/*.reservation .reservation-block a:hover {
+    background-color: #28a384;
+}*/
+
+.reservation .ul_reservationY{
+    height: 700px;
+    overflow: auto;
+    overflow-y: scroll;
+
+    position:relative;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.reservation .ul_reservationX{
+    height: fit-content;
+    overflow: auto;
+
+    padding: 0px;
+
+    display: inline-flex;
+    
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.reservation .li_reservation{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    
+    display: inline-block;
+    width : 30%;
+    
+}
+
+.reservation .btn-panier{
+    border: 2px solid black;
+    margin: 5px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+    background-color: #FFC700;
+    color: #fff;
+    font-weight: bold;
+}

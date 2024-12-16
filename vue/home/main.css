@@ -1,0 +1,72 @@
+.home {
+    background-image: url(../../picture/logo_parisEvents.png);
+    background-size: 2000px;
+    background-position-x: -800px;
+    background-position-y: -400px;
+    
+    
+    text-align: center;
+    padding: 0px;
+    border-radius: 15px;
+    margin: 20px 10px;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.home .content {
+    border-radius: 15px ;
+    padding: 60px 40px;
+    backdrop-filter: blur(3px);
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+.home .content h2 {
+    
+    
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    
+}
+
+.home .presentation {
+    max-width: 100%;
+    margin: 0 auto;
+    background: rgba(0,0,0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    
+}
+
+.home .presentation p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+.home .reservation-btn button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #34D399;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    color :#ffffff;
+}
