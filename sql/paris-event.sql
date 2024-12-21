@@ -4,7 +4,7 @@ use paris_event;
 
 -- création de la table utilisateur
 create table Utilisateur (
-    id_utilisateur int auto_increment primary key,  -- identifiant unique pour l'utilisateur
+    id_utilisateur int primary key auto_increment,  -- identifiant unique pour l'utilisateur
     nom varchar(255) not null,                      -- nom de l'utilisateur
     prenom varchar(255) not null,                   -- prénom de l'utilisateur
     email varchar(255) unique not null,             -- email unique pour l'authentification
@@ -25,10 +25,10 @@ create table Client (
 -- création de la table hall
 create table Hall (
     id_hall int auto_increment primary key,        -- identifiant unique du hall
-    nom_hall varchar(255) not null,                 -- nom du hall
-    localisation varchar(255),                      -- localisation du hall
-    description text,                               -- description du hall
-    capacite_totale int not null,                   -- capacité totale du hall
+    nom_hall varchar(255) not null,                -- nom du hall
+    localisation varchar(255),                     -- localisation du hall
+    description text,                              -- description du hall
+    capacite_totale int not null,                  -- capacité totale du hall
     plan_hall varchar(255)                         -- url ou chemin du plan du hall
 );
 
@@ -71,11 +71,75 @@ create table Facture (
     foreign key (id_reservation) references reservation(id_reservation) on delete cascade
 );
 
--- création de la table echange
-create table Echange (
-    id_echange int auto_increment primary key,      -- identifiant unique de l'échange
-    id_utilisateur int not null,                    -- lien avec l'utilisateur
-    message text not null,                          -- contenu du message échangé
-    date_message timestamp default current_timestamp,  -- date de l'échange
-    foreign key (id_utilisateur) references utilisateur(id_utilisateur) on delete cascade
+-- table pour la composition du catalogue
+create table Composer (
+    id_article_composee int not null,
+    id_article_composant int not null,
+    quantité int not null,
+    primary key (id_article_composee, id_article_composant),
+    foreign key (id_article_composee) references catalogue(id_article),
+    foreign key (id_article_composant) references catalogue(id_article)
+);
+
+-- relation entre les réservations et le catalogue
+create table Associer (
+    id_article int not null,
+    id_reservation int not null,
+    primary key (id_article, id_reservation),
+    foreign key (id_article) references catalogue(id_article),
+    foreign key (id_reservation) references reservation(id_reservation)
+);
+
+-- relation entre les stands et le halls
+create table Associer (
+    id_stand int not null,
+    id_hall int not null,
+    primary key (id_stand, id_hall),
+    foreign key (id_stand) references Stand(id_stand),
+    foreign key (id_hall) references Hall(id_hall)
+);
+
+-- relation entre les réservations et les stands
+create table Reserver (
+    id_reservation int not null,
+    id_stand int not null,
+    primary key (id_reservation, id_stand),
+    foreign key (id_reservation) references reservation(id_reservation),
+    foreign key (id_stand) references stand(id_stand)
+);
+
+-- relation entre les clients et les réservations
+create table Reserve (
+    id_client int not null,
+    id_reservation int not null,
+    primary key (id_client, id_reservation),
+    foreign key (id_client) references client(id_client),
+    foreign key (id_reservation) references reservation(id_reservation)
+);
+
+-- relation entre les clients et les visites virtuelles des stands
+create table Visite_virtuelle (
+    id_client int not null,
+    id_stand int not null,
+    primary key (id_client, id_stand),
+    foreign key (id_client) references client(id_client),
+    foreign key (id_stand) references stand(id_stand)
+);
+
+-- relation facturer entre réservation et facture
+create table Facturer (
+    id_reservation int not null,
+    id_facture int not null,
+    primary key (id_reservation, id_facture),
+    foreign key (id_reservation) references reservation(id_reservation),
+    foreign key (id_facture) references facture(id_facture)
+);
+
+-- relation administrer entre utilisateur et client
+create table Administrer (
+    id_utilisateur int not null,
+    id_client int not null,
+    primary key (id_utilisateur, id_client),
+    foreign key (id_utilisateur) references utilisateur(id_utilisateur),
+    foreign key (id_client) references client(id_client)
 );
